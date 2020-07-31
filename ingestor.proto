@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message request {
+    repeated string source = 1;
+    repeated string target = 2;
+}
+
+message response {
+    repeated string source = 1;
+    repeated string target = 2;
+    repeated float confidence = 3;
+}
+
+service fetch {
+    rpc calculate (request) returns (response) {}
+}
